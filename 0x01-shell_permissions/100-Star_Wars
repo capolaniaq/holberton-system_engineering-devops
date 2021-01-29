@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod u+x 100-Star_Wars
+chmod 777 100-Star_Wars
