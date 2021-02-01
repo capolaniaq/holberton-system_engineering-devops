@@ -1,2 +1,2 @@
 #!/bin/bash
-grep --exclede-dir=bin /etc/passwd
+grep -v bin /etc/passwd
