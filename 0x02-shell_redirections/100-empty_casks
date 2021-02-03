@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -type d -type f | ls
+finn . -empty -type d -type f | head
