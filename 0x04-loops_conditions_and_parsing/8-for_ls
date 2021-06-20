@@ -2,5 +2,5 @@
 # Write a Bash script that displays The content of the current directory\
 for file in $(ls)
 do
-    echo "$file" | cut -c 3-
+    echo "$file" | cut -d "-" -f2
 done
