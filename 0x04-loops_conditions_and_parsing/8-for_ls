@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Write a Bash script that displaysThe content of the current directory\
-for file in *; do
-    echo $file | cut -c 3-
+# Write a Bash script that displays The content of the current directory\
+for file in $(ls)
+do
+    echo "$file" | cut -c 3-
 done
