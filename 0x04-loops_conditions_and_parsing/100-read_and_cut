@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Write a Bash script that displays the content of the file /etc/passwd.
-
-cat /etc/passwd | while read LREAD
-    do
+File="/etc/passwd"
+while read -r LREAD;
+do
     echo $LREAD | cut -d ":" -f1,3,6
-done
+done <$File
