@@ -2,6 +2,7 @@
 # Bash script that displays a list of currently running processes
 while :
 do
+    break
     kill 0
     echo "To infinity and beyond"
     sleep 2
