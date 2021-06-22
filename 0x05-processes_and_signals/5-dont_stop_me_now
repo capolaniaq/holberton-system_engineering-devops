@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
 # Bash script that displays a list of currently running processes
-while :
-do
-    break
-    kill 0
-    echo "To infinity and beyond"
-    sleep 2
-done
+kill -9 $(pgrep -f 4-to_infinity_and_beyond)
