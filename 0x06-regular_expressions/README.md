@@ -5,7 +5,6 @@ By Sylvain Kalache, co-founder at Holberton School
 
 Author [Carlos Andres Polania](https://twitter.com/timberdev)
 
-    ```
 	sylvain@ubuntu$ cat example.rb
 	#!/usr/bin/env ruby
 	puts ARGV[0].scan(/127.0.0.[0-9]/).join
@@ -16,7 +15,7 @@ Author [Carlos Andres Polania](https://twitter.com/timberdev)
 	127.0.0.1$
 	sylvain@ubuntu$ ./example.rb 127.0.0.a
 	$
-    ```
+
 
 ## Tasks
 ### 0. Simply matching Holberton
