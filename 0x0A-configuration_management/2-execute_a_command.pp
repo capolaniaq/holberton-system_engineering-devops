@@ -1,6 +1,6 @@
 #kill the killmenow
 
 exec {
-  command => 'pkill -f killmenow'
-  path => '/bin/',
+  command => '/usr/bin/pkill -f killmenow'
+  provider => 'shell',
 }
