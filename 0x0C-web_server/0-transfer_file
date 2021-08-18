@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# tranfer files
+scp -i $4 $3@$2:$1
