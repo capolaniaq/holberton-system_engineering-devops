@@ -3,7 +3,7 @@
 apt-get update -y
 apt-get install -y haproxy
 
-sudo echo="
+sudo echo "
 frontend main
    bind *:80
    mode http
