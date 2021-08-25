@@ -16,4 +16,4 @@ backend web-server
 "
 echo "$setting" >> /etc/haproxy/haproxy.cfg
 echo "ENABLED=1" >> /etc/default/haproxy
-service haproxy start
+service haproxy restart
