@@ -14,5 +14,5 @@ backend web-server
    server 2718-web-01 35.227.56.113:80 check
    server 2718-web-02 35.229.26.230:80 check
 " >> /etc/haproxy/haproxy.cfg
-echo "ENABLED=1" >> /etc/default/haproxy
+
 service haproxy restart
