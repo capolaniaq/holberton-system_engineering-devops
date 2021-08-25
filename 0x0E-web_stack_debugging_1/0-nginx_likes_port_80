@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Nginx must be running, and listening on port 80 of all the server’s active IPv4 IPs
+sudo apt remove nginx nginx-common -y
+sudo apt purge nginx nginx-common -y
+apt-get update
+apt-get install nginx -y
+service nginx reload
+service nginx restart
