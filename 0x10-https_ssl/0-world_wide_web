@@ -7,7 +7,7 @@ then
 	do
 		RECORD_TYPE=$(dig "$SUBDOMAIN"'.'"$1" | grep -A1 'ANSWER SECTION:' | grep "$SUBDOMAIN"'.'"$1" | awk '{print $4}');
 		DESTINATION=$(dig "$SUBDOMAIN"'.'"$1" | grep -A1 'ANSWER SECTION:' | grep "$SUBDOMAIN"'.'"$1" | awk '{print $5}');
-		echo "The subdomain '$SUBDOMAIN' is a ""$RECORD_TYPE"" record and points to ""$DESTINATION""";
+		echo "The subdomain $SUBDOMAIN is a ""$RECORD_TYPE"" record and points to ""$DESTINATION""";
 	done
 elif (($# > 1));
 then
