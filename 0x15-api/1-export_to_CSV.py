@@ -25,7 +25,6 @@ if __name__ == "__main__":
         tasks_status.append(task)
         task = []
 
-    myfile = open(name_file, 'w')
-    with myfile:
-        writer = csv.writer(myfile)
+    with open(name_file, "w", newline='') as myfile:
+        writer = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         writer.writerows(tasks_status)
