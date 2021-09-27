@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Script that return of the number of suscriptors in
 subreddit with reppli api"""
-import requests
+from requests import get
 
 
 def number_of_subscribers(subreddit):
@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
 
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     headers = {'User-Agent': 'MyBot/0.0.1'}
-    res = requests.get(url, headers=headers)
+    res = get(url, headers=headers)
 
     data_value = res.json()['data']
     for key, value in data_value.items():
