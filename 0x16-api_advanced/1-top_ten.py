@@ -14,9 +14,11 @@ def top_ten(subreddit):
         print(None)
         return 0
 
+    json = res.json()
+
     try:
         i = 0
-        for post in res.json()['data']['children']:
+        for post in json['data']['children']:
             print(post['data']['title'])
             i += 1
             if i == 9:
