@@ -4,9 +4,9 @@
 from requests import get
 
 
-def recurse(subreddit, hot_list=[], after=""):
+def recurse(subreddit, hot_list=[], last=0):
     """Recursive function that return the list with the host_list"""
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit, after)
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'MyBot/0.0.1'}
     res = get(url, headers=headers, allow_redirects=False)
 
@@ -14,12 +14,11 @@ def recurse(subreddit, hot_list=[], after=""):
         return None
 
     try:
-        data = res.json().get('data')
-        children = data.get('children')
-        [hot_list.append(x.get('data').get('title')) for x in children]
-        after = data.get('after')
-        if after:
-            recurse(subreddit, hot_list, after)
+        hot_list = []
+        for post in res.json()['data']['children']:
+            hot_list.append(post['data']['title'])
+        if last == 0:
+            recurse(subreddit, hot_list, 1)
         return hot_list
     except:
         return None
