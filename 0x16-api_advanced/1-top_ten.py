@@ -14,12 +14,12 @@ def top_ten(subreddit):
         print(None)
         return 0
 
+    js = res.json()
     try:
-        i = 0
-        for post in res.json()['data']['children']:
-            print(post['data']['title'])
-            i += 1
-            if i == 9:
-                break
+        data = js.get("data")
+        children = data.get("children")
+        for child in children[:10]:
+            post = child.get("data")
+            print(post.get("title"))
     except:
         print(None)
