@@ -8,7 +8,8 @@ def top_ten(subreddit):
     """Function that pint the top 10 hot post in a subreddit"""
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'MyBot/0.0.1'}
-    res = get(url, headers=headers)
+    res = get(url, headers=headers, allow_redirects=False)
+
     if res.status_code != 200:
         print(None)
         return 0
@@ -18,4 +19,4 @@ def top_ten(subreddit):
         print(post['data']['title'])
         i += 1
         if i == 9:
-            break
+            return 0
