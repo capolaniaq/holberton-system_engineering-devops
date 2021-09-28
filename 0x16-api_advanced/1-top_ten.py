@@ -6,7 +6,7 @@ from requests import get
 
 def top_ten(subreddit):
     """Function that pint the top 10 hot post in a subreddit"""
-    url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot/.json?limit=10'.format(subreddit)
     headers = {'User-Agent': 'MyBot/0.0.1'}
     res = get(url, headers=headers, allow_redirects=False)
 
