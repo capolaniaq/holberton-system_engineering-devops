@@ -1,9 +1,7 @@
-# Web Stack debugging increase limit of open files per user
-exec { 'fix--for-nginx':
-  environment => ['DIR=/etc/default/nginx',
-                  'OLD=ULIMIT="-n 15"',
-                  'NEW=ULIMIT="-n 15000"'],
-  command     => 'sudo sed -i "s/$OLD/$NEW/" $DIR; sudo service nginx restart',
+# Modified number of request at momment
+exec { 'fix--default-nginx':
+  environment => ['old=ULIMIT="-n 15"','new=ULIMIT="-n 65535"'],
+  command     => 'sudo sed -i "s/$old/$new/" /etc/default/nginx; sudo service nginx restart',
   path        => ['/usr/bin', '/bin'],
   returns     => [0, 1]
 }
