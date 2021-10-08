@@ -1,7 +1,9 @@
-# server error 500
-exec { 'limit higher':
-  environment => ['old=ULIMIT="-n 15"', 'new=ULIMIT="-n 15000"'],
-  command     => 'sudo sed -i s/old/new/g /etc/default/nginx; sudo service nginx restart',
-  path        => 'usr/bin/:/bin/',
+# Debug web open files per user
+exec { 'fix--for-nginx':
+  environment => ['DIR=/etc/default/nginx',
+                  'OLD=ULIMIT="-n 15"',
+                  'NEW=ULIMIT="-n 15000"'],
+  command     => 'sudo sed -i "s/$OLD/$NEW/" $DIR; sudo service nginx restart',
+  path        => ['/usr/bin', '/bin'],
   returns     => [0, 1]
-}
+}i
